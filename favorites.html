@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="mantainnoct()">
+    <div class="colu-12 lin">
+    </div>
+    <header>
+        <nav>
+            <div class="container-fluid change">
+                <div class="row">
+                    <div class="col-6 colu-2 ">
+                        <a href="index.html"><img src="./img/logo-desktop.svg" alt="Logo de Gifos" class="img-fluid imgchange"> </a> 
+                    </div>
+
+                    <div class="col-6 colu-0" id="menuhamburguesa">
+                        <button id="burg" onclick="menuham()"><img src="./img/burger.svg" alt="Menu" class="img-burg imgchange" id="bu"></button>
+                    </div>
+                     <div class="col-0 menu colu-8" id="menuu">
+                            <ul>
+                                <li><button id="boton" class="m modonocturno">MODO NOCTURNO</button></li>
+                                <li><a href="favorites.html" class="m">FAVORITOS</a></li>
+                                <li><a href="misgifs.html" class="m">MIS GIFOS</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-0 colu-2">
+                        <button id="crear" onclick="location.href='creargif.html'"><img src="./img/CTA-crear-gifo-active.svg" alt="Botón para crear Gif" class="img-fluid2 imgchange" id="botoncreargif" onmouseover=" this.src='./img/CTA-crear-gifo-hover.svg'" onmouseout="this.src='./img/CTA-crear-gifo-active.svg'"></button>
+                    </div>
+                </div>
+            </div>
+        </nav>  
+    </header>
+    <main>
+        <section id="misfav" >
+            <img src="./img/icon-favoritos.svg" alt="Ícono de favoritos" class="icon-fav">
+            <h2>FAVORITOS</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class=" misf col-12 colu-12">
+                    </div>
+                    <div class=" col-12 colu-12">
+                        <button id="mas" ></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+        <section id="gifs" class="gifinitial">
+            <div class="container-fluid gif ">
+                <div class="row">
+                    <div class="col-12 colu-12">
+                        <h2>Trending GIFOS</h2>
+                    </div> 
+                    <div class="col-12 colu-12">
+                        <p class="p">Mira los últimos GIFO de nuestra comunidad</p>
+                    </div> 
+
+                    <div class="colu-1 flecha">
+                    </div>
+                    <div class="trendinggif col-12 colu-10">
+                    </div>
+                    <div class="colu-1 flecha">
+                    </div>
+                </div> 
+            </div> 
+        </section>
+        <div id="myModal" class="modal diurno ocultar">
+            <img src="./img/close.svg" alt="Cerrar Gif Maximizado" class="close">
+            <img class="modal-content" id="img01" src="./img/icon-fav.svg" alt="Maximizar Gif">
+            <div id="caption"></div>
+            <div class="row">
+                <div id="caption2"></div>
+                <div id="iconos"></div>    
+            </div>
+        </div>
+    <section id="footer">
+        <div class="container-fluid change">
+            <div class="row">
+                <div class="col-12 colu-2 ini">
+                    <h5>
+                        Compartir en:
+                    </h5>
+                </div>
+                <div class="col-12 symbols colu-1">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="col-12 colu-8 ini2">
+                    <h6>
+                        &copy; GIFOS 2020 All Rights Reserved.
+                    </h6>
+                </div>
+            </div> 
+        </div> 
+    </section>
+    
+    <div class=" colu-12 lin">
+    </div>
+</main>
+<script src="./assets/scripts/services/favorites.js"></script>
+<script src="./assets/scripts/icons.js"></script>
+<script src="./assets/scripts/nocturnalmodefav.js"></script>
+<script src="./assets/scripts/services/trending.js"></script>
+<script src="./assets/scripts/hamburgermenu.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
+</body>
+</html>

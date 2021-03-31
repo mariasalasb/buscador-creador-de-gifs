@@ -3,9 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-<body>
-    <script src="./script.js"></script>
+<body onload="mantainnoct()" >
+ 
+    <div class="colu-12 lin">
+    </div>
+    <header>
+        <nav>
+            <div class="container-fluid change">
+                <div class="row">
+                    <div class="col-6 colu-2 ">
+                        <a href="index.html"><img src="./img/logo-desktop.svg" alt="Logo de Gifos" class="img-fluid imgchange"> </a> 
+                    </div>
+
+                    <div class="col-6 colu-0" id="menuhamburguesa">
+                        <button id="burg" onclick="menuham()"><img src="./img/burger.svg" alt="Menu" class="img-burg imgchange" id="bu" ></button>
+                    </div>
+                        <div class="col-0 menu colu-8" id="menuu">
+                            <ul>
+                                <li><button id="boton" class="m modonocturno">MODO NOCTURNO</button></li>
+                                <li><a href="favorites.html" class="m">FAVORITOS</a></li>
+                                <li><a href="misgifs.html" class="m">MIS GIFOS</a></li>
+
+                            </ul>
+                        </div>
+                    <div class="col-0 colu-2">
+                        <button id="crear" onclick="location.href='creargif.html'"><img src="./img/button-crear-gifo.svg" alt="Boton para crear Gifo" class="img-fluid2 imgchange" id="botoncreargif" onmouseover=" this.src='./img/CTA-crear-gifo-hover.svg'" onmouseout="this.src='./img/button-crear-gifo.svg'"></button>
+                    </div>
+                </div>
+            </div>
+        </nav>  
+    </header>
+    <main>
+        <section id="buscador">
+            <div class="container-fluid change">
+                <div class="row">
+                    <div class="col-12 title colu-12">
+                        <h1>Inspírate, busca, guarda y crea los mejores <span>GIFOS</span></h1>
+                    </div> 
+                    <div class="col-12 colu-12">
+                        <img src="./img/ilustra_header.svg" alt="Imagen principal de la home" class="img-ilus">
+                    </div> 
+                    <div class="col-12 box">
+                        <div>
+                            <button id="search" onclick="clicksearch(0,1)"><img src="./img/icon-search.svg" alt="Icono de búsqueda" class="icon-busc0 imgchange ocultar" ></button>
+                            <input type="text" placeholder="Busca GIFOS y más" id="busca"> 
+                            <button id="search2" onclick="cerrar()"><img src="./img/icon-search.svg" alt="Icono de búsqueda" class="icon-busc imgchange" id="lupa"></button>
+                        </div>
+                        <div class="sugerencias  ocultar"></div>
+                        <div class="sugerencias ocultar"  ></div>
+                        <div class="sugerencias ocultar" ></div>
+                    </div> 
+                    <div class="col-12 info colu-12">
+                        <h3>Trending</h3>
+                        <p>Reactions, Entertaiment, Sports, Stickers, Artists</p>
+                    </div> 
+                    <div class=" busq col-12 colu-12 change">
+                    </div>
+                    <div class=" col-12 colu-12">
+                        <button id="mas" class="ocultar" ></button>
+                    </div>
+
+                </div> 
+            </div> 
+        </section>
+        <section id="gifs" class="gifinitial">
+            <div class="container-fluid gif ">
+                <div class="row">
+                    <div class="col-12 colu-12">
+                        <h2>Trending GIFOS</h2>
+                    </div> 
+                    <div class="col-12 colu-12">
+                        <p class="p">Mira los últimos GIFO de nuestra comunidad</p>
+                    </div> 
+                    
+                    <div class="colu-1 flecha">
+                    </div>
+                    <div class="trendinggif col-12 colu-10">
+                    </div>
+                    <div class="colu-1 flecha">
+                    </div>
+                </div> 
+            </div> 
+        </section>
+        <div id="myModal" class="modal diurno ocultar">
+            <img src="./img/close.svg" alt="Cerrar Gif Maximizado" class="close">
+            <img class="modal-content" id="img01" src="./img/icon-fav.svg" alt="Maximizar Gif">
+            <div id="caption"></div>
+            <div class="row">
+                <div id="caption2"></div>
+                <div id="iconos"></div>    
+            </div>
+        </div>
+        <section id="footer">
+            <div class="container-fluid change">
+                <div class="row">
+                    <div class="col-12 colu-2 ini">
+                        <h5>
+                            Compartir en:
+                        </h5>
+                    </div>
+                    <div class="col-12 symbols colu-1">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="col-12 colu-8 ini2">
+                        <h6>
+                            &copy; GIFOS 2020 All Rights Reserved.
+                        </h6>
+                    </div>
+                </div> 
+            </div> 
+        </section>
+        
+        <div class=" colu-12 lin">
+        </div>
+    </main>
+    <script src="./assets/scripts/hamburgermenu.js"></script>
+    <script src="./assets/scripts/icons.js"></script>
+    <script src="./assets/scripts/services/trending.js"></script>
+    <script src="./assets/scripts/services/favorites.js"></script>
+    <script src="./assets/scripts/services/search.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
 </body>
 </html>

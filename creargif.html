@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="mantainnoct()" >
+    <div class="colu-12 lin">
+    </div>
+    <header>
+        <nav>
+            <div class="container-fluid change">
+                <div class="row">
+                    <div class="col-6 colu-2 ">
+                        <a href="index.html"><img src="./img/logo-desktop.svg" alt="Logo de Gifos" class="img-fluid imgchange"> </a> 
+                    </div>
+
+                    <div class="col-6 colu-0">
+                        <button id="burg"><img src="./img/burger.svg" alt="Menu" class="img-burg imgchange" id="bu"></button>
+                    </div>
+                     <div class="col-0 menu colu-8" id="menuu">
+                            <ul>
+                                <li><button id="boton" class="m modonocturno">MODO NOCTURNO</button></li>
+                                <li><a href="favorites.html" class="m">FAVORITOS</a></li>
+                                <li><a href="misgifs.html" class="m">MIS GIFOS</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-0 colu-2">
+                        <button id="crear" ><img src="./img/CTA-crear-gifo-active.svg" alt="Botón para crear Gif" class="img-fluid2 imgchange" id="botoncreargif" onmouseover=" this.src='./img/CTA-crear-gifo-hover.svg'" onmouseout="this.src='./img/CTA-crear-gifo-active.svg'"></button>
+                    </div>
+             </div>
+            </div>
+        </nav>  
+    </header>
+    <main>
+        <section id="creargif" class=" mostrar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class=" colu-2">
+                        <img src="./img/camara.svg" alt="Imagen de cámara grabadora" class="icon-cam imgchange">
+                    </div>
+                    <div class=" colu-1">
+                        <img src="./img/element-luz-camara.svg" alt="Imagen de la luz de la cámara" class="icon-luz">
+                    </div>
+                    <div class="crearg colu-6">
+                        <div class="canv">
+                            <canvas id="myCanvas" width="688" height="390" style="border:1px solid #572EE5;">
+                            </canvas>
+                        </div>
+                        <div class="canvtext" id="canv1">
+                            <h2>Aquí podrás <br> crear tus propios <span>GIFOS</span> </h2>
+                            <p>¡Crea tu GIFO en sólo 3 pasos!</p>
+                            <p>(sólo necesitas una cámara para grabar un video)</p>
+                        </div>
+                        <div class="canvtext ocultar" id="canv2">
+                            <h2>¿Nos das acceso <br>a tu cámara?</h2>
+                            <p>El acceso a tu camara será válido sólo</p>
+                            <p>por el tiempo en el que estés creando el GIFO.</p>
+                        </div>
+                        <div class=" ocultar" id="cam">
+                            <video id="video" autoplay playsinline></video>
+                            <div class="gif-preview-container">
+                                <img id="gif-preview" alt="Preview de Gif grabado" src="./img/icon-fav.svg">
+                                <div class="c overlay"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" bu colu-3">
+                                <button id="uno" class="diurno">1</button>
+                                <button id="dos" class="diurno">2</button>
+                                <button id="tres" class="diurno">3</button>
+                            </div>
+                            <div class="colu-3">
+                                <button id="timer" class="ocultar"></button>
+                                <button id="rep" class="ocultar" onclick="location.href='creargif.html'">REPETIR CAPTURA</button>
+                            </div>    
+                        </div>
+                        <hr>
+                        <button id="com">COMENZAR</button>
+                        <button id="grab" class="ocultar" onclick="startRecording()">GRABAR</button>
+                        <button id="fin" class="ocultar" onclick="stopRecording()">FINALIZAR</button>
+                        <button id="upload" class="ocultar">SUBIR GIFO</button>
+                    </div>
+                    <div class="colu-3">
+                        <img src="./img/pelicula.svg" alt="Imagen de cinta de filme" class="icon-peli imgchange">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="myModal" class="modal diurno ocultar">
+            <img src="./img/close.svg" alt="Cerrar Gif Maximizado" class="close">
+            <img class="modal-content" id="img01" src="./img/icon-fav.svg" alt="Maximizar Gif">
+            <div id="caption"></div>
+            <div id="caption2"></div>
+        </div>
+    <section id="footer">
+        <div class="container-fluid change">
+            <div class="row">
+                <div class="col-12 colu-2 ini">
+                    <h5>
+                        Compartir en:
+                    </h5>
+                </div>
+                <div class="col-12 symbols colu-1">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="col-12 colu-8 ini2">
+                    <h6>
+                        &copy; GIFOS 2020 All Rights Reserved.
+                    </h6>
+                </div>
+            </div> 
+        </div> 
+    </section>
+    
+    <div class=" colu-12 lin">
+    </div>
+</main>
+<script src="./assets/scripts/icons.js"></script>
+<script src="./assets/scripts/nocturnalcreategif.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
+<script src="./assets/scripts/services/create-gif.js"></script>
+</body>
+</html>
