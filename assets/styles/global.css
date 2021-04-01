@@ -79,6 +79,7 @@ body{
     padding: 0px;
     height: 28px;
 }
+
 h1{
     font-size: 25px;
 }
@@ -189,7 +190,10 @@ h6{
     margin: 0;
     padding: 0;
 }
-
+#li{
+    margin-left: 140px;
+    padding-bottom: 25px;
+}
 .menu a, .menudos li , .menudos a, .menudosnoct a{
     text-decoration: none;
     

@@ -30,6 +30,8 @@ function diurno(){
     document.getElementById("myModal").classList.add("diurno");
     document.getElementsByClassName("close").src="./img/close.svg"
     m[0].src= "./img/logo-desktop.svg";
+    document.getElementById("menuu").style.backgroundColor = "rgba(87,46,229,0.90)";
+
 }
 function nocturno(){
     //v.className =w.className =p[0].className =p[1].className=p[2].className = 'nocturno';
@@ -48,6 +50,7 @@ function nocturno(){
     document.getElementById("myModal").classList.add("nocturno");
     document.querySelectorAll(".close").forEach(ew=>ew.src="./img/close-modo-noct.svg")
     m[0].src= "./img/Logo-modo-noc.svg";
+    document.getElementById("menuu").style.backgroundColor = "#000000";
 }
 
 function mantainnoct(){
@@ -74,12 +77,13 @@ document.getElementsByClassName("modonocturno")[0].addEventListener("click", fun
             localStorage.setItem("nocturno", "no");
         }
         else {
-            nocturno();
-            localStorage.removeItem("nocturno");
-            localStorage.setItem("nocturno", "si");
             if(screen.width<800){
                 document.getElementById("menuu").style.backgroundColor = "#000000";
             }
             else{};
+            nocturno();
+            localStorage.removeItem("nocturno");
+            localStorage.setItem("nocturno", "si");
+
         }
 }) ;
