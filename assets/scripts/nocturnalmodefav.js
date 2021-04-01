@@ -30,7 +30,10 @@ function diurno(){
     document.getElementById("myModal").classList.add("diurno");
     document.getElementsByClassName("close").src="./img/close.svg"
     m[0].src= "./img/logo-desktop.svg";
-    document.getElementById("menuu").style.backgroundColor = "rgba(87,46,229,0.90)";
+    if(screen.width<800){
+        document.getElementById("menuu").style.backgroundColor = "rgba(87,46,229,0.90)";
+    }
+    else{};
 
 }
 function nocturno(){
@@ -50,7 +53,10 @@ function nocturno(){
     document.getElementById("myModal").classList.add("nocturno");
     document.querySelectorAll(".close").forEach(ew=>ew.src="./img/close-modo-noct.svg")
     m[0].src= "./img/Logo-modo-noc.svg";
-    document.getElementById("menuu").style.backgroundColor = "#000000";
+    if(screen.width<800){
+        document.getElementById("menuu").style.backgroundColor = "#000000";
+    }
+    else{};
 }
 
 function mantainnoct(){

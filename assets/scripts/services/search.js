@@ -189,7 +189,10 @@ function diurno(){
     //document.getElementById("bu2").src="./img/close.svg"
     m[0].src= "./img/logo-desktop.svg";
     m[3].src="./img/icon-search.svg"
-    document.getElementById("menuu").style.backgroundColor = "rgba(87,46,229,0.90)";
+    if(screen.width<800){
+        document.getElementById("menuu").style.backgroundColor = "rgba(87,46,229,0.90)";
+    }
+    else{};
 }
 function nocturno(){
     //v.className =w.className =p[0].className =p[1].className=p[2].className=q.className= 'nocturno';
@@ -212,7 +215,6 @@ function nocturno(){
     document.getElementById("mas").classList.add("nocturno", "massnocturno");
     //document.getElementById("bu").src="./img/burger-modo-noct.svg";
     //document.getElementById("bu2").src="./img/close-modo-noct.svg";
-    document.getElementById("menuu").style.backgroundColor = "#000000";
 
     if(document.getElementById("lupa").classList.contains("lupa")){
         document.getElementById("lupa").src="./img/close-modo-noct.svg";
@@ -220,6 +222,10 @@ function nocturno(){
     else {
         document.getElementById("lupa").src="./img/icon-search-modo-noct.svg";
     }
+    if(screen.width<800){
+        document.getElementById("menuu").style.backgroundColor = "#000000";
+    }
+    else{};
     m[0].src= "./img/Logo-modo-noc.svg";
     m[3].src="./img/icon-search-modo-noct.svg";
 }
